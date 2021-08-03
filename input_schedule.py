@@ -18,6 +18,17 @@ t2.insert(CURRENT, 'Please input your schedule')
 t2.pack()
 t2.configure(font=('Arial', 14))
 
+rtlabel = Label(win1)
+# entry  return value
+
+def return_value(n) :
+    rtlabel.config(text = "Date " + entdate.get())
+
+entdate = Entry(win1)
+entdate.bind("<Return>", return_value)
+entdate.pack()
+rtlabel.pack()
+
 sv1 = StringVar()
 sitemlabel = Label(win1, font = ('Arial',14),width = 5, height = 5, fg = 'green', relief = 'groove')
 vitemlabel = Label(win1, textvariable=sv1, font = ('Arial',12),width = 5, height = 5, fg = 'green', relief = 'solid')
