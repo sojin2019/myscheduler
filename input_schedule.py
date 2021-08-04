@@ -25,9 +25,20 @@ def return_value(n) :
     rtlabel.config(text = "Date " + entdate.get())
 
 entdate = Entry(win1)
-entdate.bind("<Return>", return_value)
+entdate.bind("<Return>", return_value) # <Return> enter event
 entdate.pack()
 rtlabel.pack()
+
+entFromTime = Entry(win1)
+
+def errorMsgTime(n):
+    if (getint(entFromTime.get()) > 24): #getint
+        print("Please check your input (From or To)")
+    else:
+        print("Good")
+
+entFromTime.bind("<Return>", errorMsgTime)
+entFromTime.pack()
 
 sv1 = StringVar()
 sitemlabel = Label(win1, font = ('Arial',14),width = 5, height = 5, fg = 'green', relief = 'groove')
